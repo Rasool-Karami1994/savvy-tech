@@ -1,5 +1,7 @@
 # SavvyTech List Manager
 
+> **Live Demo:** https://savvy-tech-nine.vercel.app/
+
 A lightweight, production-ready **React + TypeScript** app (Vite) that lets you **create, edit, delete, and search** list items with **local persistence**. It ships with a polished UI, **design tokens** (CSS vars), **Tailwind utilities**, and **Light/Dark** theme toggle. Includes **Docker** & **Docker Compose** for both dev and prod.
 
 ---
@@ -15,7 +17,6 @@ A lightweight, production-ready **React + TypeScript** app (Vite) that lets you 
 * **Accessible** forms (labels, aria attributes, focus styles)
 * **Modular components**: `SearchBar`, `ItemsTable`, `UndoToast`, `ItemForm`, `Modal`, `ThemeToggle`, `Button`
 * **Containerized** workflows:
-
   * **Prod** image (serves built `dist/` via `serve`)
   * **Dev** container with hot-reload (Vite)
 
@@ -35,28 +36,30 @@ A lightweight, production-ready **React + TypeScript** app (Vite) that lets you 
 ## 📂 Project Structure (key parts)
 
 ```
+
 src/
-  components/
-    ItemForm.tsx
-    Modal.tsx
-    ThemeToggle.tsx
-    EmptyState.tsx
-    Table.tsx
-    SearchBar.tsx
-    ItemsTable.tsx
-    UndoToast.tsx
-    ui/
-      Button.tsx
-  utils/
-    date.ts
-    id.ts
-    storage.ts
-    types.ts
-  App.tsx
-  main.tsx
+components/
+ItemForm.tsx
+Modal.tsx
+ThemeToggle.tsx
+EmptyState.tsx
+Table.tsx
+SearchBar.tsx
+ItemsTable.tsx
+UndoToast.tsx
+ui/
+Button.tsx
+utils/
+date.ts
+id.ts
+storage.ts
+types.ts
+App.tsx
+main.tsx
 index.css               ← Tailwind import + token utilities (light/dark)
 tailwind.config.ts
-```
+
+````
 
 ---
 
@@ -76,7 +79,7 @@ npm install
 # run vite dev server
 npm run dev
 # opens at http://localhost:5173
-```
+````
 
 ### Build & Preview (Local)
 
@@ -331,7 +334,5 @@ docker compose --profile dev up --build
 * Buttons support `aria-label` when text is hidden on mobile (icon-only).
 * Table is horizontally scrollable on small screens (`overflow-x-auto`) and prevents cell wrapping via `whitespace-nowrap` (restores wrapping on `sm:` and up).
 
----
-
-
+```
 
