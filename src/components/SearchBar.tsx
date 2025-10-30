@@ -1,14 +1,16 @@
 import { FiSearch } from "react-icons/fi";
 
+export interface SearchBarProps {
+  value: string;
+  onChange: (v: string) => void;
+  placeholder?: string;
+}
+
 export default function SearchBar({
   value,
   onChange,
   placeholder = "Search items by title or subtitle…",
-}: {
-  value: string;
-  onChange: (v: string) => void;
-  placeholder?: string;
-}) {
+}: SearchBarProps) {
   return (
     <div className="relative w-full flex-1">
       <FiSearch

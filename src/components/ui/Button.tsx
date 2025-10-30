@@ -68,7 +68,6 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         "bg-transparent text-title border border-transparent hover:bg-selected/40",
     };
 
-    const contentGap = hasLabel && hasIcon ? "gap-2" : "";
 
     return (
       <button
@@ -77,7 +76,6 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
           base,
           sizes[size],
           variants[variant],
-          contentGap,
           fullWidth && "w-full",
           className
         )}

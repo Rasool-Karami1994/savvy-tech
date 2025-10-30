@@ -3,16 +3,17 @@ import Button from "./ui/Button";
 import { FiEdit2, FiTrash2 } from "react-icons/fi";
 import { formatDate } from "../utils/date";
 import type { Item } from "../utils/types";
+export interface ItemsTableProps {
+  items: Item[];
+  onEdit: (item: Item) => void;
+  onDelete: (id: string) => void;
+}
 
 export default function ItemsTable({
   items,
   onEdit,
   onDelete,
-}: {
-  items: Item[];
-  onEdit: (item: Item) => void;
-  onDelete: (id: string) => void;
-}) {
+}: ItemsTableProps) {
   return (
     <div className="overflow-x-auto md:overflow-visible rounded-2xl">
       <div className="inline-block min-w-full align-middle">
@@ -42,7 +43,9 @@ export default function ItemsTable({
                           variant="outline"
                           size="sm"
                           onClick={() => onEdit(it)}
-                          leftIcon={<FiEdit2 className="h-4 w-4 text-secondary" />}
+                          leftIcon={
+                            <FiEdit2 className="h-4 w-4 text-secondary" />
+                          }
                           aria-label="Edit"
                           className="gap-0 sm:gap-2 px-2 sm:px-3"
                         >
@@ -52,7 +55,9 @@ export default function ItemsTable({
                           variant="outline"
                           size="sm"
                           onClick={() => onDelete(it.id)}
-                          leftIcon={<FiTrash2 className="h-4 w-4 text-red-500" />}
+                          leftIcon={
+                            <FiTrash2 className="h-4 w-4 text-red-500" />
+                          }
                           aria-label="Delete"
                           className="gap-0 sm:gap-2 px-2 sm:px-3"
                         >
